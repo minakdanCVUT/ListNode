@@ -17,7 +17,7 @@ void add(Matrix * m, int row, int col, int value){
         if(findSameIndex(r, row) == true){ // если уже есть строка с таким индексом в массиве строк
             if(m->row->index != row) { // если головной узел не является добавляем(то есть он уже числится)
                 while (true) {
-                    if (r->next->index == row) {
+                    if (r->index == row) {
                         break;
                     } else {
                         r = r->next;
@@ -34,7 +34,7 @@ void add(Matrix * m, int row, int col, int value){
                 }else{
                     while(true){
                         if(r->next != NULL){
-                            if(r->next->index < row){
+                            if(r->index < row){
                                 r = r->next;
                             }else{
                                 break;
@@ -69,7 +69,7 @@ void add(Matrix * m, int row, int col, int value){
         if(findSameIndex(c, col) == true){ // если уже есть такой индекс в массиве столбцов
             if(m->col->index != col) {
                 while (true) {
-                    if (c->next->index == col) {
+                    if (c->index == col) {
                         break;
                     } else {
                         c = c->next;
@@ -86,7 +86,7 @@ void add(Matrix * m, int row, int col, int value){
                 }else{
                     while(true){
                         if(c->next != NULL){
-                            if(c->next->index < col){ //
+                            if(c->index < col){ //
                                 c = c->next;
                             }else{ // если нашелся такой узел, что его индекс меньше
                                 break;
